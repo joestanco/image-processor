@@ -4,7 +4,7 @@
  * 
  * Created by Joe Stanco (https://github.com/joestanco)
  *
- * Library dependencies: jQuery
+ * Library dependencies: jQuery, EaselJS, Pixastic
  *
  */
 
@@ -14,7 +14,7 @@
 		defaults = {
 			scratchCanvasId: "scratchCanvas",
 			scratchImageId: "img",
-			stageId: "stage",
+			stageId: "stage",df
 			stageWidth: 0,
 			stageHeight: 0,
 			scratchCanvasWidth: 0,
@@ -73,6 +73,7 @@
 			if (!$(target).find("#"+id).length) {
 				$(target).append('<canvas id="' + id + '"></canvas>');
 			}
+			$("#"+id).crossOrigin = "Anonymous";
 			self.moveOffscreen($("#"+id));
 		},
 
@@ -87,6 +88,7 @@
 			if (!$(target).find("#"+id).length) {
 				$(target).after('<img id="' + id + '" />');
 			}
+			$("#"+id).crossOrigin = "Anonymous";
 			self.moveOffscreen($("#"+id));
 		},
 
@@ -236,6 +238,7 @@
 		applyEffect: function(effectName, target, callback) {
 
 			var effect, timer, options,
+				self = this,
 				timedOut = false;
 			if (this.effects.hasOwnProperty(effectName) && typeof target !== "undefined") {
 				if (target.length) target = target[0];
