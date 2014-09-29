@@ -14,7 +14,7 @@
 		defaults = {
 			scratchCanvasId: "scratchCanvas",
 			scratchImageId: "img",
-			stageId: "stage",df
+			stageId: "stage",
 			stageWidth: 0,
 			stageHeight: 0,
 			scratchCanvasWidth: 0,
